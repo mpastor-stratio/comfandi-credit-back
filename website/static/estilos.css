@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+	--primary: #0083cb;
+	--light: #ffffff;
+	--grey: #efefef;
+}
+
+body{
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+}
+
+.nav{
+    min-height: 100vh;
+    width: 300px;
+}
+
+.nav__link{
+    display: block;
+    text-decoration: none;
+}
+
+.nav__link--inside{
+    border-radius: 6px ;
+    padding-left: 2px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+    background: #288cc2;
+}
+
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0083cb;
+}
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow{
+    transform: rotate(90deg);
+}
+
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #ffffff;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+a:hover {
+	text-decoration: none;
+}
+.logo{
+    background-color: var(--primary) !important;
+	padding: .875rem 1.25rem;
+}
+
+#container {
+    padding: 25% 25% 5%;  
+    }
+
+#logo_search {
+    color: #666;
+    width:100%;   
+    }
+
+#logo_search h1 {
+    font-size: 60px;
+    text-shadow: 1px 2px 3px #999;
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+#logo_search p{
+    padding-bottom: 30px;
+    font-size: 30px;
+    text-shadow: 1px 2px 3px #999;
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+#form-buscar  {
+    width:30%;   
+    }
+
+#form-buscar >.form-group >.input-group > .form-control {
+    height: 40px;
+}
+#form-buscar >.form-group >.input-group > .input-group-btn > .btn{
+        height: 40px; 
+        font-size: 16px;
+        font-weight: 300; 
+            
+        
+}
+#form-buscar >.form-group >.input-group > .input-group-btn > .btn .glyphicon{
+    margin: right 12px;   
+}    
+
+
+#form-buscar >.form-group >.input-group > .form-control {
+    font-size: 12px;
+    font-weight: 300;
+    
+}
+
+#form-buscar >.form-group >.input-group > .form-control:focus {
+    border-color: #33A444;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,.075), 0 0 2px rgba(0, 109, 0, 0.8);
+            box-shadow: inset 0 2px 2px rgba(0,0,0,.075), 0 0 2px rgba(0, 109, 0, 0.8);
+}
+
+.search-form {
+    border-radius: 30px 30px 30px 30px;
+    }
+
+#search-titulares {
+border: 2px;
+}
+
+#search-deudor {
+    border: 2px;
+    }

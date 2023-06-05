@@ -1,0 +1,107 @@
+{% extends "template.html" %} {% block title %} Home {% endblock %}
+{% block content %}
+{% from 'macros.html' import render_csrf_token %}
+<div class="container" style="margin-top: 2.5%;">
+  <div class="col-md-10 col-md-offset-6">
+    <div class="row">
+      <div id="logo_search" class="text-center">
+        <h1>Listas Restrictivas</h1>
+        <p>Titulares</p>
+      </div>
+      <form role="button" id="form-buscar" class="form-buscar" method="POST">
+        {{ render_csrf_token() }}
+        <div class="form-group" style="position: relative; left: 100%;">
+          <div class="input-group">
+            <input
+             class="form-control search-form" 
+             name="search-titulares" 
+             id="search-titulares" 
+             type="text" 
+             placeholder="Número de identificación..." required />
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-success"> Buscar </button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <!-- -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Identificación</th>
+            <th scope="col">Nombre Completo</th>
+            <th scope="col">Respuesta</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if query_titular==[] %}
+            <tr>
+              <th scope="row"> {{ search_t }}</th>
+              <td>   </td>
+              <td>No Habilitado</td>
+            </tr>
+          {% else %}
+            {% for titular in query_titular %}
+            <tr>
+              <th scope="row"> {{ titular.Id_Afiliado }}</th>
+              <td>{{ titular.Nombre_Completo2 }}</td>
+              <td>{{ titular.Respuesta_Final_Titular }}</td>
+            </tr>
+            {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="container" style="margin-top: 1%;">
+    <div class="col-md-10 col-md-offset-6">
+      <div class="row">
+        <div id="logo_search" class="text-center">
+          <h1>Listas Restrictivas</h1>
+          <p>Deudor Solidario</p>
+        </div> 
+        <form role="button" id="form-buscar" class="form-buscar" method="POST">
+          {{ render_csrf_token() }}
+          <div class="form-group" style="position: relative; left: 100%;">
+            <div class="input-group">
+              <input class="form-control search-form" name="search-deudor" id="search-deudor" type="text" placeholder="Número de identificación..." required />
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-success"> Buscar </button>
+              </span>
+            </div>
+          </div>
+        </form>
+        <!-- -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Identificación</th>
+              <th scope="col">Nombre Completo</th>
+              <th scope="col">Respuesta</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if query_deudor==[] %}
+              <tr>
+                <th scope="row"> {{ search_d }}</th>
+                <td>   </td>
+                <td>Sin restricción</td>
+              </tr>
+            {% else %}
+              {% for deudor in query_deudor %}
+              <tr>
+                <th scope="row"> {{ deudor.Id_Afiliado }}</th>
+                <td>{{ deudor.Nombre_Completo2 }}</td>
+                <td>{{ deudor.Respuesta_Final_Solidario }}</td>
+              </tr>
+              {% endfor %}
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Crédito Comfandi</title>
+</head>
+<body>
+    <h2>Crédito Comfandi</h2>
+    {% from 'macros.html' import render_csrf_token %}
+ 
+<div class="container" id="container">
+    <div class="form-container sign-in-container">
+        <form action="#" id="formvalidate" method="POST">
+            {{ render_csrf_token() }}
+  
+            <img src="../static/img/comfandi-logo.png" class="logo">
+            <p> </p>
+            <span>¡Bienvenido de nuevo!</span>
+            <p> </p>
+            <div class="form-group">
+                <label class="palceholder" for="email">Email</label>
+                <input 
+                class="form-control" 
+                name="email"
+                id="email" 
+                type="email" 
+                placeholder="" />
+                <span class="lighting"></span>
+            </div>
+            <div class="form-group">
+                <label 
+                class="palceholder" 
+                for="pasword">Contraseña
+                </label>
+                <input 
+                class="form-control" 
+                name="password" 
+                id="password" 
+                type="password" 
+                placeholder="" />
+                <span class="lighting"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <img src="../static/img/familia-landing.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>
+        Creado por Stratio Big Data Colombia S.A.S
+    </p>
+</footer>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script><script  src=".{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

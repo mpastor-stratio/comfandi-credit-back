@@ -1,0 +1,102 @@
+:root{
+	--primary: #0083cb;
+	--light: #ffffff;
+	--grey: #efefef;
+}
+
+body{
+	overflow: hidden;
+	font-family: 'Muli', sans-serif;
+	font-weight: 300;
+	color: var(--primary);
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.bg-primary{
+	background-color: var(--primary) !important;
+  width: 300px;
+}
+
+#sidebar-container {
+	min-height: 100vh;
+}
+
+#sidebar-container .logo{
+	padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu{
+	width: 18rem;
+}
+
+
+#container {
+padding: 25% 25% 5%;  
+}
+
+
+#logo_search {
+color: #666;
+width:100%;   
+}
+
+#logo_search h1 {
+    font-size: 60px;
+    text-shadow: 1px 2px 3px #999;
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+#logo_search p{
+  padding-bottom: 30px;
+  font-size: 30px;
+  text-shadow: 1px 2px 3px #999;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+#form-buscar {
+	width:30%;   
+	}
+
+#form-buscar >.form-group >.input-group > .form-control {
+    height: 40px;
+}
+#form-buscar >.form-group >.input-group > .input-group-btn > .btn{
+        height: 40px; 
+        font-size: 16px;
+        font-weight: 300; 
+         
+       
+}
+#form-buscar >.form-group >.input-group > .input-group-btn > .btn .glyphicon{
+ margin: right 12px;   
+}    
+
+
+#form-buscar >.form-group >.input-group > .form-control {
+    font-size: 16px;
+    font-weight: 300;
+   
+}
+
+#form-buscar >.form-group >.input-group > .form-control:focus {
+  border-color: #33A444;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
+}
+
+.search-form {
+	border-radius: 30px 0 0 30px;
+  }
+
+#search-titulares {
+border: 1px;
+}
+
+

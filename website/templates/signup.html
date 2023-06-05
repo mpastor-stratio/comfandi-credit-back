@@ -1,0 +1,82 @@
+{% extends "template.html" %} {% block title %} Home {% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show"  role="alert"> 
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show"  role="alert"> 
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% from 'macros.html' import render_csrf_token %}
+<div class="container" style="margin-top: 3.5%;">
+  <div class="col-md-12 col-md-offset-10">
+    <div class="row">
+      <div id="logo_search" class="text-center">
+        <h1>Crear Usuarios</h1>
+        <p>Nuevo Usuario</p>
+      </div>
+      <form role="button" id="form-buscar" class="form-buscar" method="POST">
+        {{ render_csrf_token() }}
+        <div class="form-group" style="position: relative; left: 100%;">
+          <div class="input-group">
+            <div class="input-group">
+              <label for="email"> Email Address</label>
+              <div class="input-group">
+                <input type="email" class="form-control search-form" id="email" name="email" placeholder="Enter email" required />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="firstName"> First Name</label>
+              <div class="input-group">
+                <input type="text" class="form-control search-form" id="firstName" name="firstName" placeholder="Enter first Name" required />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="pasword1"> Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control search-form" id="password1" name="password1" placeholder="Enter password" required />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="pasword2"> Password (Confirm)</label>
+              <div class="input-group">
+                <input type="password" class="form-control search-form" id="password2" name="password2" placeholder="Confirm password " required />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="rol_id"> Rol</label>
+              <div class="input-group">
+                <select id="rol_id" name="rol_id" required>
+                  <option value=1>Administrador</option>
+                  <option value=2>Editor</option>
+                  <option value=3>Lector</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-success"> Crear </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
